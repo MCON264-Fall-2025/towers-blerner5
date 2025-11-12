@@ -1,10 +1,7 @@
 package exercises;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import static java.nio.file.Files.move;
 
 /**
  * Exercise 23 — Towers of Hanoi Variation
@@ -64,11 +61,10 @@ public class TowersVariations {
         // TODO 1: Base case — if n == 0 → return.
         if(n == 0) return;
 
-        solveVariation (n-1, from, mid, to);
+        solveVariation(n-1, from, to, mid);
         System.out.printf("Move disk %d: %d → %d → %d%n", n, from, mid, to);
         count+=2;
-        solveVariation (n-1, from, mid, to);
-        solveVariation (n-1, mid, to, to);
+        solveVariation(n-1, mid, from, to);
 
 
         // TODO 2: Recursive case —

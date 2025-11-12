@@ -14,11 +14,13 @@ Each part reinforces a key concept of recursion — base case, recursive case, a
 _Describe the base condition that stops recursion (for example, what happens when `n == 0`?)._
 
 > ✎ Your answer here
-
+when n is 0 recusrsion cannot happen becuase you can not go down from 0
 ### 2. Recursive Case
 _Explain the sequence of recursive calls and what each represents._
 
-> ✎ Your answer here
+>✎ Your answer here
+> recursive calls is when you call to a method on the number before you in the stack
+
 
 ### 3. Sample Trace (for n = 3)
 
@@ -39,23 +41,25 @@ _Total moves = 2ⁿ − 1 = 7 (for n = 3)_
 _How did you modify the standard recursion to count rather than print moves?_
 
 >  Your answer here
+> instead of calling the moves 2 times i called it 3 times
 
 ### 2. Verification of Formula
 _Complete the table and verify that count = 2ⁿ − 1._
 
-| n | Expected (2ⁿ − 1) | Program Output | Matches? (Y/N) |
-|:--:|:--:|:--:|:--:|
-| 1 | 1 |  |  |
-| 2 | 3 |  |  |
-| 3 | 7 |  |  |
-| 4 | 15 |  |  |
-| 5 | 31 |  |  |
+| n | Expected (2ⁿ − 1) |     Program Output     | Matches? (Y/N) |
+|:--:|:--:|:----------------------:|:--------------:|
+| 1 | 1 |           1            |       Y        |
+| 2 | 3 |           7            |       N        |
+| 3 | 7 |          128           |       N        |
+| 4 | 15 |         32,767         |       N        |
+| 5 | 31 |       1,048,575        |       N        |
 
 ### 3. Reflection
 _What changes when you replace printed moves with a counter? What are the pros and cons?_
 
 > ✎ Your answer here
-
+how to measure the algorithm
+pro = quicker con = harder to debug
 ---
 
 ## Part 3 — Hanoi Variation (`TowersVariations.java`)
@@ -64,21 +68,23 @@ _What changes when you replace printed moves with a counter? What are the pros a
 _Every move must pass through the middle peg. How does this alter the recursion?_
 
 > ✎ Your answer here
+> many more steps are involved
 
 ### 2. Observed Move Counts
 
 | n | Expected ≈ 3ⁿ − 1 | Program Output | Matches? (Y/N) |
-|:--:|:--:|:--:|:--:|
-| 1 | 2 |  |  |
-| 2 | 8 |  |  |
-| 3 | 26 |  |  |
-| 4 | 80 |  |  |
+|:--:|:--:|:--------------:|:--------------:|
+| 1 | 2 |       2        |       Y        |
+| 2 | 8 |       8        |       Y        |
+| 3 | 26 |       26       |       Y        |
+| 4 | 80 |       80       |       Y        |
 
 ### 3. Analysis
 _Why does this variation grow faster than the standard version? How do additional move constraints affect complexity?_
 
 > ✎ Your answer here
-
+because there is an extra step involved
+> the algorithm has to include all those extra steps
 ---
 
 ## Comparative Analysis
@@ -95,6 +101,8 @@ _Why does this variation grow faster than the standard version? How do additiona
 _Estimate the maximum recursion depth before StackOverflowError and discuss how stack size (–Xss flag) affects this._
 
 > ✎ Your answer here
+> the highest n can go is probably 1,000 (I had to ask AI about this)
+> -Xss lets you maually decide size of stack
 
 ---
 
@@ -117,6 +125,9 @@ _Estimate the maximum recursion depth before StackOverflowError and discuss how 
 3. What is the trade-off between elegance and efficiency in recursion?
 
 > ✎ Your answers here
+>is there a base case, what is my max number of steps, do I have to use the mid
+> makes sure you are only counting valuable numbers...nothing that cannot be recursed
+> the answers are correct and efficient but the code is a lot of redundancy
 
 ---
 
